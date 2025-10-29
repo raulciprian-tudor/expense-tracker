@@ -22,12 +22,16 @@ def main():
             case 1:
                 expenses_service.add_expenses(expenses)
             case 2:
+                # TODO
                 expenses_service.view_expenses(expenses)
             case 3:
+                # TODO
                 expenses_service.view_total(expenses)
             case 4:
+                # TODO
                 expenses_service.delete_expense(expenses)
             case 5:
+                # TODO
                 expenses_service.view_by_category(expenses)
             case 6:
                 # TODO: Save data to file
