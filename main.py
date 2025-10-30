@@ -1,8 +1,12 @@
+"""This module provides all the methods for expenses."""
+
 import expenses_service
 
+
 def main():
-    expenses = [] # List of expenses
-    
+    """This is the main function to run the program."""
+    expenses = []  # List of expenses
+
     while True:
         print("\n=== Personal Expense Tracker ===")
         print("1. Add expense")
@@ -17,28 +21,23 @@ def main():
         except ValueError:
             print("Please enter a valid number.")
             continue
-        
-        match choice:
-            case 1:
-                expenses_service.add_expenses(expenses)
-            case 2:
-                # TODO
-                expenses_service.view_expenses(expenses)
-            case 3:
-                # TODO
-                expenses_service.view_total(expenses)
-            case 4:
-                # TODO
-                expenses_service.delete_expense(expenses)
-            case 5:
-                # TODO
-                expenses_service.view_by_category(expenses)
-            case 6:
-                # TODO: Save data to file
-                print("Goodbye!")
-                break
-            case _:
-                print("Invalid choice. Please try again.")
-            
+
+        if choice == 1:
+            expenses_service.add_expenses(expenses)
+        elif choice == 2:
+            expenses_service.view_expenses(expenses)
+        elif choice == 3:
+            expenses_service.view_total(expenses)
+        elif choice == 4:
+            expenses_service.delete_expense(expenses)
+        elif choice == 5:
+            expenses_service.view_by_category(expenses)
+        elif choice == 6:
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+
 if __name__ == "__main__":
     main()
