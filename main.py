@@ -1,11 +1,12 @@
 """This module provides all the methods for expenses."""
 
 import expenses_service
+import file_handler
 
 
 def main():
     """This is the main function to run the program."""
-    expenses = []  # List of expenses
+    expenses = file_handler.load_expenses()  # Expenses list
 
     while True:
         print("\n=== Personal Expense Tracker ===")
@@ -33,6 +34,7 @@ def main():
         elif choice == 5:
             expenses_service.view_by_category(expenses)
         elif choice == 6:
+            file_handler.save_expenses(expenses)
             print("Goodbye!")
             break
         else:
